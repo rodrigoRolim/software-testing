@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import questionsjunit.Aleatorio;
+import entity.Aleatorio;
 
 /**
  *
@@ -32,6 +32,13 @@ public class AleatorioTest {
      @Test
      // start and end numbers are less then zero
      public void gerarNumeroAleatorio_Test_03() {
-         
+        Aleatorio aleatorio = new Aleatorio();
+        assertEquals(-1, aleatorio.gerarNumeroAleatorio(-1, -1));
+     }
+     @Test
+     //start great then end number
+     public void gerarNumeroAleatorio_Test_04() {
+        Aleatorio aleatorio = new Aleatorio();
+        assertTrue(aleatorio.gerarNumeroAleatorio(1, 10) > -1);
      }
 }
